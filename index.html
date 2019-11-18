@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			display:flex;
+		}
+		.cur{
+			display:flex;
+			background:#00007F;
+			text-align:center;
+			cursor:pointer;
+		}
+		.xianshi{
+			display:none;
+		}
+		.xianshi .show{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="tabs">
+			<div class="cur">交通行业</div>
+			<div>司法行业</div>
+			<div>政府相关行业</div>
+				<div>其他行业</div>
+		</div>
+		<div class="xianshi">
+				<ul class="show">
+					<li>军用物资组套仓储管理系统</li>
+					<li>集装箱电子铅封管理系统</li>
+					<li>集装箱电子铅封管理系统</li>
+					<li>集装箱电子铅封管理系统</li>
+					<li>集装箱电子铅封管理系统</li>
+				</ul>
+				<ul>
+					<li>司法行业</li>
+					<li>司法行业</li>
+					<li>司法行业</li>
+					<li>司法行业</li>
+					<li>司法行业</li>
+					<li>司法行业</li>
+				</ul>
+				<ul>
+					<li>政府相关行业</li>
+					<li>政府相关行业</li>
+					<li>政府相关行业</li>
+					<li>政府相关行业</li>
+					<li>政府相关行业</li>
+					<li>政府相关行业</li>
+				</ul>
+				<ul>
+					<li>其他行业</li>
+					<li>其他行业</li>
+					<li>其他行业</li>
+					<li>其他行业</li>
+					<li>其他行业</li>
+					<li>其他行业</li>
+					<li>其他行业</li>
+				</ul>
+			</div>
+		</div>
+	<script>
+		var box=document.getElementById('box');
+		var div=box.getElementsByClassName('tabs')[0];
+		var divs=div.getElementsByTagName('div');
+		var d=box.getElementsByClassName('xianshi')[0];
+		var uls=d.getElementsByTagName('ul');
+		for(var i=0;i<divs.length;i++){
+			divs[i].index=i;
+			divs[i].onclick=function(){
+				for(var i=0;i<divs.length;i++){
+					divs[i].className='';
+				}
+				for(var i=0;i<uls.length;i++){
+				uls[i].className='';
+				}
+				this.className='cur';
+				uls[this.index].className='show';
+			}
+		}
+
+	</script>
+</body>
+</html>
